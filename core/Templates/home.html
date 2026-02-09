@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="text-center">
+    <h2>Welcome to HRMS Lite</h2>
+    <p class="text-muted">Manage Employees & Track Attendance Easily</p>
+
+    <div class="mt-4">
+        <a href="{% url 'employee_list' %}" class="btn btn-primary btn-lg me-2">Manage Employees</a>
+        <a href="{% url 'attendance_list' %}" class="btn btn-success btn-lg">View Attendance</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HRMS Lite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">HRMS Lite</a>
+
+        <div>
+            <a class="btn btn-outline-light me-2" href="{% url 'employee_list' %}">Employees</a>
+            <a class="btn btn-outline-light me-2" href="{% url 'attendance_list' %}">Attendance</a>
+            <a class="btn btn-success" href="{% url 'mark_attendance' %}">Mark Attendance</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

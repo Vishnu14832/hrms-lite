@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Add New Employee</h3>
+<hr>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label>Employee ID</label>
+        <input type="text" name="employee_id" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Full Name</label>
+        <input type="text" name="full_name" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Department</label>
+        <input type="text" name="department" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Add Employee</button>
+    <a href="{% url 'employee_list' %}" class="btn btn-secondary">Back</a>
+
+</form>
+
+{% endblock %}

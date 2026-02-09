@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Mark Attendance</h3>
+<hr>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label>Select Employee</label>
+        <select name="employee" class="form-control" required>
+            <option value="">-- Select --</option>
+            {% for emp in employees %}
+            <option value="{{ emp.id }}">
+                {{ emp.full_name }} ({{ emp.employee_id }})
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Date</label>
+        <input type="date" name="date" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Status</label>
+        <select name="status" class="form-control" required>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save Attendance</button>
+</form>
+
+{% endblock %}
