@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY SETTINGS
 SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['hrms-lite-het6.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
